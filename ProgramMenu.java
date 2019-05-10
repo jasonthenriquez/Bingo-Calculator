@@ -206,6 +206,10 @@ public class ProgramMenu extends JFrame {
 
             else if (e.getSource() == executeButton) {
                 if (convertToInteger(trialField.getText()) != -1 && convertToInteger(playerField.getText()) != -1) {
+                     if (winConditions == null || (winConditions.size() == 0 && bingoPattern == BingoPattern.CUSTOM)) {
+                        return;
+                    }
+                    
                     graphicalBingoCard.setActive(false);
                     trials = convertToInteger(trialField.getText());
                     players = convertToInteger(playerField.getText());
